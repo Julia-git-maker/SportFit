@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Weight">Текущий вес</string>
+    <string name="Height">Рост</string>
+    <string name="YourTarget">Ваша цель</string>
+    <string name="Looseweight">Сбросить вес</string>
+    <string name="GetBuff">Набрать мышечнуя массу</string>
+    <string name="KeepFit">Поддерживать</string>
+</resources>

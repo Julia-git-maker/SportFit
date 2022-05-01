@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Life">
+    <TextView
+        android:id="@+id/textLife"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="@string/AppNema"
+        android:textColor="@color/main"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ProgressBar
+        android:id="@+id/pb_life"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:progressDrawable="@drawable/progressbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLife" />
+
+    <ImageView
+        android:id="@+id/iv_arrow_life"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/pb_life"
+        app:layout_constraintStart_toStartOf="@+id/pb_life"
+        app:srcCompat="@drawable/arrow_10" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/lifeStyle"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/pb_life"
+        app:layout_constraintTop_toBottomOf="@+id/pb_life" />
+
+    <Button
+        android:id="@+id/btn_active_life"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/inter_semibold"
+        android:includeFontPadding="true"
+        android:text="@string/activeLive"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:strokeColor="@color/main"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_mid_active"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/midActiveLive"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_active_life"
+        app:layout_constraintTop_toBottomOf="@+id/btn_active_life"
+        app:strokeColor="@color/main"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_low_life"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/lowActiveLive"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_mid_active"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mid_active"
+        app:strokeColor="@color/main"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btn_sit_life"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/sittingLive"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_low_life"
+        app:layout_constraintTop_toBottomOf="@+id/btn_low_life"
+        app:strokeColor="@color/main"
+        app:strokeWidth="1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

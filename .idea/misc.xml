@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable-v24/progressbar.xml" value="0.245" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable/arrow_10.xml" value="0.124" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable/calculator_svgrepo_com__1_.xml" value="0.166" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable/exit_svgrepo_com.xml" value="0.166" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable/group_26.xml" value="0.166" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable/group_28.xml" value="0.166" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/drawable/icons8_______________________96.xml" value="0.166" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_add_to_list.xml" value="0.264" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_age.xml" value="0.34003350083752093" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_calculator.xml" value="0.152" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_calories_calculator.xml" value="0.24010416666666667" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_height.xml" value="0.264" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_life.xml" value="0.264" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_main_page.xml" value="0.4" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_start.xml" value="0.2418478260869565" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_target.xml" value="0.4" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/activity_weight.xml" value="0.2" />
+        <entry key="..\:/Android/SportFit/app/src/main/res/layout/one_line_food.xml" value="0.3186046511627907" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

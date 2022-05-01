@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SportFit</string>
+    <string name="SprotFit">SprotFit</string>
+    <string name="Male">Мужчина</string>
+    <string name="Female">Женщина</string>
+    <string name="SportFit" />
+    <string name="AppNema">SportFit</string>
+    <string name="ChooseSex">Здравствуйте, укажите ваш пол</string>
+    <string name="Age">Возраст</string>
+    <string name="Next">Далее</string>
+    <string name="Weight">Текущий вес</string>
+    <string name="Height">Рост</string>
+    <string name="activeLive">Активный</string>
+    <string name="lifeStyle">Образ жизни</string>
+    <string name="midActiveLive">Умеренно активный</string>
+    <string name="lowActiveLive">Малоподвижный</string>
+    <string name="sittingLive">Сидячий</string>
+    <string name="YourTarget">Ваша цель</string>
+    <string name="Looseweight">Сбросить вес</string>
+    <string name="GetBuff">Набрать мышечную массу</string>
+    <string name="KeepFit">Поддерживать</string>
+    <string name="home">home</string>
+    <string name="belki">Белки</string>
+    <string name="zhiri">Жиры</string>
+    <string name="uglevody">Углеводы</string>
+    <string name="title_activity_calories_calculator">CaloriesCalculator</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
