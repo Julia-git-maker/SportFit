@@ -40,6 +40,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private DatabaseReference myDataBase;
     List<Food> foodList = new ArrayList<>();
     private String FOOD_KEY = "Food";
+    String[] strings = new String[6];
+    String[] strings2 = new String[6];
+
+    double weighta = 0;
+    double belkia = 0;
+    double zhiria = 0;
+    double ugleva = 0;
+    double caloriesa = 0;
+    double belkia2 = 0;
+    double zhiria2 = 0;
+    double ugleva2 = 0;
+    double caloriesa2 = 0;
     public DataBaseHelper(@Nullable Context context) { super(context, "Sportfit.db", null, 1); }
 
     @Override
@@ -48,7 +60,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(createUserTable);
         String createTableStatement = "CREATE TABLE " + TABLE_FOOD + " (" + COLUMN_PRODUCT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PRODUCT_NAME + " TEXT, " + COLUMN_PRODUCT_WEIGHT + " INTEGER, " + COLUMN_PRODUCT_BELKI + " INTEGER, " + COLUMN_PRODUCT_ZHIRI + " INTEGER, " + COLUMN_PRODUCT_UGLEV + " INTEGER, " + COLUMN_PRODUCT_CALORIES + " INTEGER)";
         sqLiteDatabase.execSQL(createTableStatement);
-
+        strings[0] = "Итого: ";
+        strings[1] = "0";
+        strings[2] = "0";
+        strings[3] = "0";
+        strings[4] = "0";
+        strings[5] = "0";
+        strings2[0] = "Итого на \n 100 гр. ";
+        strings2[1] = "0";
+        strings2[2] = "0";
+        strings2[3] = "0";
+        strings2[4] = "0";
+        strings2[5] = "0";
     }
 
 
@@ -211,6 +234,101 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return returnList;
+    }
+
+    public String[] getEveryFoodWeight(){
+        List<String[]> returnList = new ArrayList<>();
+
+
+        String queryString = "SELECT * FROM " + TABLE_FOOD;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                double weight = cursor.getDouble(2);
+                double belki = cursor.getDouble(3);
+                double zhiri = cursor.getDouble(4);
+                double uglev = cursor.getDouble(5);
+                double calories = cursor.getDouble(6);
+
+                Food newFood = new Food(id,name,weight,belki, zhiri, uglev,calories);
+                returnList.add(newFood.getForTable());
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            //Something if failed
+        }
+        for (int i = 0; i<returnList.size();i++){
+            weighta += Double.parseDouble(returnList.get(i)[1]);
+            belkia += Double.parseDouble(returnList.get(i)[2]);
+            zhiria += Double.parseDouble(returnList.get(i)[3]);
+            ugleva += Double.parseDouble(returnList.get(i)[4]);
+            caloriesa += Double.parseDouble(returnList.get(i)[5]);
+        }
+        strings[0] = "Итого: ";
+        strings[1] = String.valueOf(weighta);
+        strings[2] = String.valueOf(belkia);
+        strings[3] = String.valueOf(zhiria);
+        strings[4] = String.valueOf(ugleva);
+        strings[5] = String.valueOf(caloriesa);
+
+
+        cursor.close();
+        db.close();
+        return strings;
+    }
+    public String[] getEveryFoodWeight100(){
+        List<String[]> returnList = new ArrayList<>();
+
+
+        String queryString = "SELECT * FROM " + TABLE_FOOD;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                double weight = cursor.getDouble(2);
+                double belki = cursor.getDouble(3)/weight * 100;
+                double zhiri = cursor.getDouble(4)/weight * 100;
+                double uglev = cursor.getDouble(5)/weight * 100;
+                double calories = cursor.getDouble(6)/weight * 100;
+
+                Food newFood = new Food(id,name,weight,belki, zhiri, uglev,calories);
+                returnList.add(newFood.getForTable());
+
+
+            } while (cursor.moveToNext());
+        }
+        else {
+            //Something if failed
+        }
+        for (int i = 0; i<returnList.size();i++){
+            weighta = 100;
+            belkia2 += Double.parseDouble(returnList.get(i)[2]);
+            zhiria2 += Double.parseDouble(returnList.get(i)[3]);
+            ugleva2 += Double.parseDouble(returnList.get(i)[4]);
+            caloriesa2 += Double.parseDouble(returnList.get(i)[5]);
+        }
+        strings2[0] = "Итого на\n100 гр. ";
+        strings2[1] = String.valueOf(weighta);
+        strings2[2] = String.valueOf(belkia2);
+        strings2[3] = String.valueOf(zhiria2);
+        strings2[4] = String.valueOf(ugleva2);
+        strings2[5] = String.valueOf(caloriesa2);
+
+
+        cursor.close();
+        db.close();
+        return strings2;
     }
 
     public List<Food> getEveryFoodforAdd(){

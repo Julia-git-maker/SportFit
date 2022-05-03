@@ -36,7 +36,7 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-        Bundle data = getIntent().getExtras();
+
         DataBaseHelper db = new DataBaseHelper(this);
         MainMenuCalculator calculator = new MainMenuCalculator(db.getEveryUser().get(0));
         tv_belki = findViewById(R.id.tv_belki);

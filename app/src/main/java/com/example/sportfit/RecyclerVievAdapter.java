@@ -68,6 +68,8 @@ public class RecyclerVievAdapter extends RecyclerView.Adapter<RecyclerVievAdapte
                             BZDUCalculator calc = new BZDUCalculator(food);
                             dataBaseHelper.addOneToFood(calc.GetEditedFood());
                             Toast.makeText(context, "Готово!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(context,Calculator.class);
+                            context.startActivity(intent);
                         }
                         // Do something with value!
                     }

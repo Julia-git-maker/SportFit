@@ -15,6 +15,7 @@ import java.util.Arrays;
 import de.codecrafters.tableview.TableView;
 import de.codecrafters.tableview.listeners.SwipeToRefreshListener;
 import de.codecrafters.tableview.model.TableColumnDpWidthModel;
+import de.codecrafters.tableview.model.TableColumnWeightModel;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
@@ -42,7 +43,10 @@ public class Calculator extends AppCompatActivity {
 //        Toast.makeText(Calculator.this, Arrays.deepToString(getColumns()), Toast.LENGTH_SHORT).show();
         tv_calc.setHeaderAdapter(new SimpleTableHeaderAdapter(this,headers));
         tv_calc.setDataAdapter(new SimpleTableDataAdapter(this, columns));
-        TableColumnDpWidthModel columnModel = new TableColumnDpWidthModel(Calculator.this,600);
+
+        TableColumnDpWidthModel columnModel = new TableColumnDpWidthModel(Calculator.this,6,100);
+        columnModel.setColumnWidth(0,175);
+
         tv_calc.setColumnModel(columnModel);
 
 
@@ -72,8 +76,7 @@ public class Calculator extends AppCompatActivity {
                 columns = getColumns();
                 tv_calc.setHeaderAdapter(new SimpleTableHeaderAdapter(Calculator.this,headers));
                 tv_calc.setDataAdapter(new SimpleTableDataAdapter(Calculator.this, columns));
-                TableColumnDpWidthModel columnModel = new TableColumnDpWidthModel(Calculator.this,300);
-                tv_calc.setColumnModel(columnModel);
+
             }
         });
 
@@ -82,12 +85,17 @@ public class Calculator extends AppCompatActivity {
 
     public String[][] getColumns(){
         dataBaseHelper = new DataBaseHelper(this);
-        String[][] strings = new String[dataBaseHelper.getEveryFood().size()][];
+
+        String[][] strings = new String[dataBaseHelper.getEveryFood().size()+2][];
         for (int i = 0; i < dataBaseHelper.getEveryFood().size(); i++){
 
             strings[i] = dataBaseHelper.getEveryFood().get(i);
-
         }
+//        strings[-2] = dataBaseHelper.getEveryFoodWeight();
+        strings[strings.length-1] = dataBaseHelper.getEveryFoodWeight();
+        strings[strings.length-2] = dataBaseHelper.getEveryFoodWeight100();
+//        Toast.makeText(this, dataBaseHelper.getEveryFoodWeight(), Toast.LENGTH_SHORT).show();
+
         return strings;
     }
 }
